@@ -22,21 +22,21 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				avante_garde_posted_on();
-				avante_garde_posted_by();
+				avante_gard_posted_on();
+				avante_gard_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php avante_garde_post_thumbnail(); ?>
+	<?php avante_gard_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
 		the_content( sprintf(
 			wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'avante-garde' ),
+				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'avant-garde' ),
 				array(
 					'span' => array(
 						'class' => array(),
@@ -47,13 +47,13 @@
 		) );
 
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'avante-garde' ),
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'avant-garde' ),
 			'after'  => '</div>',
 		) );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php avante_garde_entry_footer(); ?>
+		<?php avante_gard_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

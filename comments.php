@@ -28,18 +28,18 @@ if ( post_password_required() ) {
 		?>
 		<h2 class="comments-title">
 			<?php
-			$avante_garde_comment_count = get_comments_number();
-			if ( '1' === $avante_garde_comment_count ) {
+			$avante_gard_comment_count = get_comments_number();
+			if ( '1' === $avante_gard_comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'avante-garde' ),
+					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'avant-garde' ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
 				printf( // WPCS: XSS OK.
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $avante_garde_comment_count, 'comments title', 'avante-garde' ) ),
-					number_format_i18n( $avante_garde_comment_count ),
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $avante_gard_comment_count, 'comments title', 'avant-garde' ) ),
+					number_format_i18n( $avante_gard_comment_count ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			}
@@ -63,7 +63,7 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
 			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'avante-garde' ); ?></p>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'avant-garde' ); ?></p>
 			<?php
 		endif;
 

@@ -14,27 +14,27 @@
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses avante_garde_header_style()
+ * @uses avante_gard_header_style()
  */
-function avante_garde_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'avante_garde_custom_header_args', array(
+function avante_gard_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'avante_gard_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'avante_garde_header_style',
+		'wp-head-callback'       => 'avante_gard_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'avante_garde_custom_header_setup' );
+add_action( 'after_setup_theme', 'avante_gard_custom_header_setup' );
 
-if ( ! function_exists( 'avante_garde_header_style' ) ) :
+if ( ! function_exists( 'avante_gard_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see avante_garde_custom_header_setup().
+	 * @see avante_gard_custom_header_setup().
 	 */
-	function avante_garde_header_style() {
+	function avante_gard_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*
