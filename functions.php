@@ -49,16 +49,6 @@ if ( ! version_compare( PHP_VERSION, '5.4', '>=' ) ) {
  */
 require get_template_directory() . '/includes/classes/class-avante-garde-kirki.php';
 
-/**
- * The Kirki installer class.
- */
-require get_template_directory() . '/includes/classes/class-kirki-integration.php';
-
-/**
- * Tgm plugin installer class.
- */
-require get_template_directory() . '/includes/classes/class-tgm-plugin-activation.php';
-
  /**
  * Frontend config class.
  */
@@ -101,3 +91,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/includes/functions/jetpack.php';
 }
 
+/**
+ * Theme About page.
+ */
+require get_template_directory() . '/includes/admin/about-page.php'; ?>

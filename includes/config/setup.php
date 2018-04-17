@@ -79,6 +79,11 @@ if ( ! function_exists( 'avante_gard_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+
+		/*
+		 * Now some cleanup to remove features that we do not support
+		 */
+		remove_theme_support( 'custom-header' );
 	}
 endif;
 add_action( 'after_setup_theme', 'avante_gard_setup' );
