@@ -6,6 +6,43 @@
  *
  * @package Avante_Garde
  */
+ 
+// add_action( 'after_switch_theme', 'avante_garde_check_theme_setup' );
+/**
+ * Show in WP Dashboard notice about the theme is not activated.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function avante_garde_check_theme_setup(){
+	
+	// Minimum required version
+	$minimum_version = '5.4';
+
+    // Compare versions
+    if ( version_compare( PHP_VERSION, $minimum_version, '<' ) ) :
+ 
+		add_action( 'admin_notices', 'avante_garde_php_version_admin_notice' );
+		// Theme not activated info message
+        function avante_garde_php_version_admin_notice() {
+            ?>
+            <div class="update-nag">
+                <?php printf( __( 'This theme requires a minimum PHP version of %s. Your version is %s. Your previous theme has been restored.', 'avante-garde' ), $minimum_version, PHP_VERSION ); ?>
+            </div>
+            <?php
+        }
+ 
+        // Switch back to previous theme
+        switch_theme( get_option( 'theme_switched' ) );
+        return false;
+ 
+    endif;
+}
+
+if ( ! version_compare( PHP_VERSION, '5.4', '>=' ) ) {
+	return;
+}
 
 /**
  * Implement the Theme Kirki Fallback.
@@ -21,6 +58,21 @@ require get_template_directory() . '/includes/classes/class-kirki-integration.ph
  * Tgm plugin installer class.
  */
 require get_template_directory() . '/includes/classes/class-tgm-plugin-activation.php';
+
+ /**
+ * Frontend config class.
+ */
+require get_template_directory() . '/includes/config/frontend.php';
+
+ /**
+ * Required plugins config.
+ */
+require get_template_directory() . '/includes/config/plugins.php';
+
+ /**
+ * Setup theme.
+ */
+require get_template_directory() . '/includes/config/setup.php';
 
  /**
  * Implement the Custom Header feature.
