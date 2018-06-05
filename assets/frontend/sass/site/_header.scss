@@ -1,0 +1,266 @@
+/* -------------------------------------------------------------------------------- */
+
+/*	3. Header
+/* -------------------------------------------------------------------------------- */
+
+.header {
+    padding: 35px 0;
+}
+
+.header .section-inner {
+    text-align: center;
+}
+
+/* Blog title --------------------------------------- */
+
+.blog-title {
+    display       : block;
+    font-family   : 'Playfair Display', Georgia, serif;
+    font-size     : 2.25em;
+    line-height   : 110%;
+    font-weight   : 700;
+    text-align    : center;
+    text-rendering: optimizeLegibility;
+}
+
+.blog-title a {
+    color: #111;
+}
+
+.blog-title a:hover {
+    color: #CA2017;
+}
+
+.blog-tagline {
+    margin-top : 15px;
+    font-size  : 1.1em;
+    line-height: 120%;
+    text-align : center;
+    font-style : italic;
+}
+
+/* Blog logo --------------------------------------- */
+
+.blog-logo {
+    display: inline-block;
+}
+
+.blog-logo img {
+    display  : block;
+    max-width: 100%;
+    height   : auto;
+}
+
+/* Header image --------------------------------------- */
+
+.header-image {
+    max-height: 350px;
+}
+
+.has-featured-image .header-image {
+    max-height: none;
+}
+
+.header-image img {
+    margin    : 0 auto;
+    max-height: 100%;
+    width     : auto;
+    visibility: hidden;
+}
+
+/* -------------------------------------------------------------------------------- */
+
+/*	4. Navigation
+/* -------------------------------------------------------------------------------- */
+
+.toggles,
+.mobile-search,
+.mobile-menu {
+    display: none;
+}
+
+.navigation {
+    border-top: 1px solid #ddd;
+}
+
+.main-menu {
+    text-align: center;
+    font-size : 0.9em;
+}
+
+.main-menu li {
+    display : inline-block;
+    position: relative;
+}
+
+.main-menu>li+li {
+    margin-left: 40px;
+}
+
+.main-menu>li+li:before {
+    content    : "/";
+    display    : block;
+    font-family: 'Lato', sans-serif;
+    font-size  : 15px;
+    font-weight: 700;
+    color      : #bbb;
+    position   : absolute;
+    top        : 50%;
+    margin-top : -7px;
+    left       : -25px;
+}
+
+.main-menu a {
+    display : inline-block;
+    padding : 24px 0;
+    color   : #111;
+    position: relative;
+}
+
+.main-menu>.menu-item-has-children>a {
+    padding-right: 18px;
+    position     : relative;
+}
+
+.main-menu>.menu-item-has-children>a::after {
+    content         : "";
+    display         : block;
+    border          : 5px solid transparent;
+    border-top-color: #ca2017;
+    position        : absolute;
+    z-index         : 1001;
+    right           : 0;
+    top             : 50%;
+    margin-top      : -2px;
+}
+
+.main-menu li:hover>a {
+    cursor: pointer;
+    color : #ca2017;
+}
+
+/* Sub menus --------------------------------------- */
+
+.main-menu ul {
+    position          : absolute;
+    z-index           : 10000;
+    display           : block;
+    left              : -9999px;
+    top               : 54px;
+    opacity           : 0;
+    z-index           : 999;
+    padding-top       : 16px;
+    -webkit-transition: opacity 0.3s ease-in-out, top 0.3s ease-in-out;
+    -moz-transition   : opacity 0.3s ease-in-out, top 0.3s ease-in-out;
+    -ms-transition    : opacity 0.3s ease-in-out, top 0.3s ease-in-out;
+    -o-transition     : opacity 0.3s ease-in-out, top 0.3s ease-in-out;
+    transition        : opacity 0.3s ease-in-out, top 0.3s ease-in-out;
+}
+
+.main-menu>li>ul:before {
+    content            : "";
+    display            : block;
+    position           : absolute;
+    z-index            : 1000;
+    top                : 0px;
+    left               : 50%;
+    margin-left        : -8px;
+    border             : 8px solid transparent;
+    border-bottom-color: #222;
+}
+
+.main-menu ul .menu-item-has-children::after {
+    content          : "";
+    display          : block;
+    border           : 6px solid transparent;
+    border-left-color: rgba(255, 255, 255, 0.4);
+    position         : absolute;
+    z-index          : 1001;
+    right            : 10px;
+    top              : 50%;
+    margin-top       : -6px;
+}
+
+.main-menu ul .menu-item-has-children:hover::after {
+    border-left-color: #222;
+    right            : -12px;
+}
+
+.main-menu ul li {
+    width     : 240px;
+    background: #222;
+    text-align: center;
+}
+
+.main-menu ul a {
+    display           : block;
+    padding           : 20px;
+    line-height       : 130%;
+    -moz-box-sizing   : border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing        : border-box;
+    border-bottom     : 1px solid rgba(255, 255, 255, 0.1);
+    color             : #fff;
+    font-style        : italic;
+}
+
+.main-menu ul a:hover {
+    color: #ca2017;
+}
+
+.main-menu ul>li:last-child>a {
+    border-bottom-width: 0;
+}
+
+.main-menu>li:hover>ul {
+    opacity    : 1;
+    left       : 50%;
+    margin-left: -120px;
+    top        : 47px;
+}
+
+/* Deep down --------------------------------------- */
+
+.main-menu ul ul {
+    padding-top: 0;
+    top        : 10px;
+}
+
+.main-menu ul ul li {
+    background: #333;
+}
+
+.main-menu ul ul .menu-item-has-children:hover::after {
+    border-left-color: #333;
+}
+
+.main-menu ul ul ul li {
+    background: #444;
+}
+
+.main-menu ul ul ul .menu-item-has-children:hover::after {
+    border-left-color: #444;
+}
+
+.main-menu ul ul ul ul li {
+    background: #555;
+}
+
+.main-menu ul ul ul ul .menu-item-has-children:hover::after {
+    border-left-color: #555;
+}
+
+.main-menu ul ul ul ul ul li {
+    background: #666;
+}
+
+.main-menu ul ul ul ul ul .menu-item-has-children:hover::after {
+    border-left-color: #666;
+}
+
+.main-menu li>ul>li:hover>ul {
+    opacity    : 1;
+    top        : 0;
+    left       : 240px;
+    margin-left: 0;
+}

@@ -26,8 +26,8 @@ class Frontend {
      * @since 1.0.0
      */
     function register_scripts() {
-      wp_register_script( 'avant-garde-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-		  wp_register_script( 'avant-garde-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+        wp_register_script( 'avant-garde-navigation', get_template_directory_uri() . '/assets/frontend/js/navigation.js', array(), '20151215', true );
+        wp_register_script( 'avant-garde-skip-link-focus-fix', get_template_directory_uri() . '/assets/frontend/js/skip-link-focus-fix.js', array(), '20151215', true );
     }
 
     /**
@@ -37,12 +37,12 @@ class Frontend {
      */
     function enqueue_scripts() {
 
-      wp_enqueue_script( 'avant-garde-navigation' );
-      wp_enqueue_script( 'avant-garde-skip-link-focus-fix' );
+        wp_enqueue_script( 'avant-garde-navigation' );
+        wp_enqueue_script( 'avant-garde-skip-link-focus-fix' );
 
-      if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-        wp_enqueue_script( 'comment-reply' );
-      }
+        if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+            wp_enqueue_script( 'comment-reply' );
+        }
 
     }
 
@@ -52,7 +52,7 @@ class Frontend {
      * @since 1.0.0
      */
     function enqueue_styles() {
-		  wp_enqueue_style( 'avant-garde-style', get_stylesheet_uri() );
+        wp_enqueue_style( 'avant-garde-style', get_template_directory_uri() .'/assets/frontend/css/style.css' );
     }
  
 }

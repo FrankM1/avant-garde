@@ -94,4 +94,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 /**
  * Theme About page.
  */
-require get_template_directory() . '/includes/admin/about-page.php'; ?>
+require get_template_directory() . '/includes/admin/about-page.php';
+
+$front = new \Avante_Garde\Frontend();
